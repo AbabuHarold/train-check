@@ -14,7 +14,9 @@ jobs:
         with:
           distribution: temurin
           java-version: '17'
-      - uses: android-actions/setup-android@v3
+      # Android SDK は GitHub のランナーに最初から入っているので、そのまま使う
+      - name: Android SDK の場所
+        run: echo "ANDROID_HOME=$ANDROID_HOME" && echo "sdk.dir=$ANDROID_HOME" > android/local.properties
       - uses: gradle/actions/setup-gradle@v4
       - name: 時刻表をアプリに同梱
         run: cp shared/timetable.json android/app/src/main/assets/timetable.json
