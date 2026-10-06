@@ -1,0 +1,48 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "電車チェック",
+      "intents": [
+        {
+          "name": "NextTrainIntent",
+          "slots": [{ "name": "destination", "type": "DestinationType" }],
+          "samples": [
+            "{destination}",
+            "{destination}は",
+            "{destination}何分",
+            "{destination}は何分",
+            "{destination}何分発",
+            "{destination}は何分発",
+            "{destination}行き",
+            "{destination}行きは何分",
+            "{destination}行きの電車",
+            "{destination}方面",
+            "{destination}方面は何分",
+            "{destination}に行く電車",
+            "{destination}までの電車",
+            "電車何分発",
+            "電車は何分発",
+            "次の電車",
+            "次の電車は",
+            "何分発",
+            "何分の電車"
+          ]
+        },
+        { "name": "AMAZON.HelpIntent", "samples": [] },
+        { "name": "AMAZON.CancelIntent", "samples": [] },
+        { "name": "AMAZON.StopIntent", "samples": [] },
+        { "name": "AMAZON.NavigateHomeIntent", "samples": [] },
+        { "name": "AMAZON.FallbackIntent", "samples": [] }
+      ],
+      "types": [
+        {
+          "name": "DestinationType",
+          "values": [
+            { "id": "univ", "name": { "value": "大学", "synonyms": ["学校", "キャンパス", "授業", "だいがく"] } },
+            { "id": "job", "name": { "value": "バイト先", "synonyms": ["バイト", "バ先", "アルバイト", "職場", "仕事"] } }
+          ]
+        }
+      ]
+    }
+  }
+}

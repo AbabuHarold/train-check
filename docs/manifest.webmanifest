@@ -1,0 +1,19 @@
+{
+  "name": "電車チェック",
+  "short_name": "電車",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f5f2",
+  "theme_color": "#1f6f5c",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ],
+  "shortcuts": [
+    { "name": "家 → 大学", "url": "./?r=home_univ" },
+    { "name": "大学 → 家", "url": "./?r=univ_home" },
+    { "name": "家 → バイト先", "url": "./?r=home_job" },
+    { "name": "バイト先 → 家", "url": "./?r=job_home" }
+  ]
+}
