@@ -37,7 +37,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="ホーム画面にウィジェットを追加" />
+            android:text="ウィジェットを追加（1ルートずつ切り替え）" />
+        <Button
+            android:id="@+id/pinAll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ウィジェットを追加（全ルートを表示）" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="置いたあとも、ウィジェット右上のボタンで「1ルートずつ」と「全ルート」を切り替えられます。全ルート表示は、ウィジェットを縦に大きく（4×3 以上）すると種別つきの2行表示になります。"
+            android:textSize="13sp" />
         <TextView
             android:id="@+id/status"
             android:layout_width="match_parent"

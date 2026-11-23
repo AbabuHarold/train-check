@@ -26,6 +26,7 @@ public class MainActivity extends Activity {
         url = findViewById(R.id.url);
         Button fetch = findViewById(R.id.fetch);
         Button pin = findViewById(R.id.pin);
+        Button pinAll = findViewById(R.id.pinAll);
 
         Map<String, Object> config = null;
         try { config = TimetableStore.load(this); } catch (Exception ignored) { }
@@ -53,10 +54,15 @@ public class MainActivity extends Activity {
 
         AppWidgetManager mgr = getSystemService(AppWidgetManager.class);
         if (mgr != null && mgr.isRequestPinAppWidgetSupported()) {
-            pin.setOnClickListener(x -> mgr.requestPinAppWidget(new ComponentName(this, TrainWidgetProvider.class), null, null));
+            ComponentName provider = new ComponentName(this, TrainWidgetProvider.class);
+            pin.setOnClickListener(x -> mgr.requestPinAppWidget(provider, null,
+                TrainWidgetProvider.pinnedCallback(this, TrainWidgetProvider.MODE_ROTATE)));
+            pinAll.setOnClickListener(x -> mgr.requestPinAppWidget(provider, null,
+                TrainWidgetProvider.pinnedCallback(this, TrainWidgetProvider.MODE_ALL)));
         } else {
             pin.setText("ホーム画面を長押し →「ウィジェット」から追加してください");
             pin.setEnabled(false);
+            pinAll.setVisibility(android.view.View.GONE);
         }
         TrainWidgetProvider.schedule(this);
         showStatus(null);
